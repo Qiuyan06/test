@@ -1,0 +1,258 @@
+{
+    "name" : "趣味阅吧",
+    "appid" : "__UNI__FBE87A1",
+    "description" : "",
+    "versionName" : "1.3.0",
+    "versionCode" : 130,
+    "transformPx" : false,
+    /* 5+App特有相关 */
+    "app-plus" : {
+        "usingComponents" : true,
+        "nvueCompiler" : "uni-app",
+        "compilerVersion" : 3,
+        "splashscreen" : {
+            "alwaysShowBeforeRender" : false,
+            "waiting" : false,
+            "autoclose" : true,
+            "delay" : 0
+        },
+        "safearea" : {
+            "bottom" : {
+                "offset" : "none"
+            }
+        },
+        "privacy" : {
+            "prompt" : "template", //可取值template、custom、none
+            "template" : {
+                //prompt取值为template时有效，用于配置模板提示框上显示的内容
+                "title" : "隐私政策",
+                "message" : "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;铀铀平台（以下或称“我们”）深知个人信息对您的重要性，并会尽全力保护您的个人信息安全可靠。我们致力于维持您对我们的信任，保护您的个人信息。同时铀铀平台承诺，我们将按业界成熟的安全标准，采取相应的安全保护措施来保护您的个人信息。<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;请在使用铀铀平台前，仔细阅读并透彻理解<a style='color:#2979ff;' href='https://iotapp.prod.ilabeco.com/privacy/user-protocol.html'>《用户手册》</a><a style='color:#2979ff;' href='http://iotapp.prod.ilabeco.com/privacy/'>《隐私政策》</a>，本政策具有合同效力，特别是以粗体标识的条款，您应重点并谨慎阅读。如你同意，即意味着您同意我们按照本政策处理您的相关信息，请点击下面按钮接受我们的服务。本个人信息保护政策将帮助您了解以下内容：<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;一、我们如何收集和使用您的个人信息（包含设备Mac地址、唯一设备识别码等信息）<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;二、我们如何共享、转让、转移、公开披露您的个人信息<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;三、我们如何保护您的个人信息<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;四、您的权利<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;五、我们如何处理未成年人的个人信息<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;六、您的个人信息如何在全球范围转移<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;七、本政策如何更新<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;八、争议解决",
+                "buttonAccept" : "同意",
+                "buttonRefuse" : "暂不同意"
+            }
+        },
+        /* 模块配置 */
+        "modules" : {
+            "Share" : {},
+            "VideoPlayer" : {},
+            "Statistic" : {},
+            "OAuth" : {},
+            "Push" : {}
+        },
+        /* 应用发布信息 */
+        "distribute" : {
+            /* android打包配置 */
+            "android" : {
+                "permissions" : [
+                    "<uses-feature android:name=\"android.hardware.camera\"/>",
+                    "<uses-feature android:name=\"android.hardware.camera.autofocus\"/>",
+                    "<uses-permission android:name=\"android.permission.ACCESS_COARSE_LOCATION\"/>",
+                    "<uses-permission android:name=\"android.permission.ACCESS_FINE_LOCATION\"/>",
+                    "<uses-permission android:name=\"android.permission.ACCESS_NETWORK_STATE\"/>",
+                    "<uses-permission android:name=\"android.permission.ACCESS_WIFI_STATE\"/>",
+                    "<uses-permission android:name=\"android.permission.CAMERA\"/>",
+                    "<uses-permission android:name=\"android.permission.CHANGE_WIFI_STATE\"/>",
+                    "<uses-permission android:name=\"android.permission.FLASHLIGHT\"/>",
+                    "<uses-permission android:name=\"android.permission.INTERNET\"/>",
+                    "<uses-permission android:name=\"android.permission.MODIFY_AUDIO_SETTINGS\"/>",
+                    "<uses-permission android:name=\"android.permission.MOUNT_UNMOUNT_FILESYSTEMS\"/>",
+                    "<uses-permission android:name=\"android.permission.READ_LOGS\"/>",
+                    "<uses-permission android:name=\"android.permission.READ_PHONE_STATE\"/>",
+                    "<uses-permission android:name=\"android.permission.RECEIVE_BOOT_COMPLETED\"/>",
+                    "<uses-permission android:name=\"android.permission.VIBRATE\"/>",
+                    "<uses-permission android:name=\"android.permission.WRITE_EXTERNAL_STORAGE\"/>",
+                    "<uses-permission android:name=\"android.permission.WRITE_SETTINGS\"/>",
+                    "<uses-permission android:name=\"android.permission.RECEIVE_USER_PRESENT\"/>"
+                ]
+            },
+            /* ios打包配置 */
+            "ios" : {
+                "capabilities" : {
+                    "entitlements" : {
+                        "com.apple.developer.associated-domains" : [ "applinks:https://iotapp.prod.ilabeco.com" ]
+                    }
+                },
+                "idfa" : true,
+                "privacyDescription" : {
+                    "NSPhotoLibraryUsageDescription" : "用户去读相册上传图片来修改头像，上传身份证照片来通过实名认证",
+                    "NSPhotoLibraryAddUsageDescription" : "用户可以保存仪器的分享码图片，让别人扫描二维码图片可以添加共享设备到自己账号",
+                    "NSCameraUsageDescription" : "用户可以通过摄像头拍照来修改头像和上传身份证照片来进行实名认证",
+                    "NSUserTrackingUsageDescription" : "请放心，开启权限不会获取您在其他站点的隐私信息，该权限仅用于标识设备并保障服务安全与提示浏览体验"
+                },
+                "urltypes" : "iot"
+            },
+            /* SDK配置 */
+            "sdkConfigs" : {
+                "share" : {
+                    "weixin" : {
+                        "appid" : "wxac5d242e91663a0c",
+                        "UniversalLinks" : "https://iotapp.prod.ilabeco.com/ulink/"
+                    },
+                    "qq" : {
+                        "appid" : "101976961",
+                        "UniversalLinks" : "https://iotapp.prod.ilabeco.com/ulink/"
+                    }
+                },
+                "ad" : {},
+                "push" : {
+                    "unipush" : {}
+                },
+                "statics" : {
+                    "umeng" : {
+                        "appkey_ios" : "6048290a6ee47d382b7a3080",
+                        "channelid_ios" : "appStore",
+                        "appkey_android" : "60482c40b8c8d45c1393eb1d",
+                        "channelid_android" : "unknown"
+                    }
+                },
+                "maps" : {
+                    "amap" : {
+                        "appkey_ios" : "878713f1cfe4a6bbec93b91867159c2f",
+                        "appkey_android" : "878713f1cfe4a6bbec93b91867159c2f"
+                    }
+                },
+                "payment" : {},
+                "oauth" : {
+                    "weixin" : {
+                        "appid" : "wxac5d242e91663a0c",
+                        "appsecret" : "",
+                        "UniversalLinks" : "https://iotapp.prod.ilabeco.com/ulink/"
+                    },
+                    "qq" : {
+                        "appid" : "101976961",
+                        "UniversalLinks" : "https://iotapp.prod.ilabeco.com/ulink/"
+                    },
+                    "apple" : {}
+                }
+            },
+            "splashscreen" : {
+                "androidStyle" : "default",
+                "iosStyle" : "common",
+                "android" : {
+                    "hdpi" : "",
+                    "xhdpi" : "",
+                    "xxhdpi" : ""
+                },
+                "ios" : {
+                    "storyboard" : ""
+                }
+            },
+            "icons" : {
+                "android" : {
+                    "hdpi" : "unpackage/res/icons/72x72.png",
+                    "xhdpi" : "unpackage/res/icons/96x96.png",
+                    "xxhdpi" : "unpackage/res/icons/144x144.png",
+                    "xxxhdpi" : "unpackage/res/icons/192x192.png"
+                },
+                "ios" : {
+                    "appstore" : "unpackage/res/icons/1024x1024.png",
+                    "ipad" : {
+                        "app" : "unpackage/res/icons/76x76.png",
+                        "app@2x" : "unpackage/res/icons/152x152.png",
+                        "notification" : "unpackage/res/icons/20x20.png",
+                        "notification@2x" : "unpackage/res/icons/40x40.png",
+                        "proapp@2x" : "unpackage/res/icons/167x167.png",
+                        "settings" : "unpackage/res/icons/29x29.png",
+                        "settings@2x" : "unpackage/res/icons/58x58.png",
+                        "spotlight" : "unpackage/res/icons/40x40.png",
+                        "spotlight@2x" : "unpackage/res/icons/80x80.png"
+                    },
+                    "iphone" : {
+                        "app@2x" : "unpackage/res/icons/120x120.png",
+                        "app@3x" : "unpackage/res/icons/180x180.png",
+                        "notification@2x" : "unpackage/res/icons/40x40.png",
+                        "notification@3x" : "unpackage/res/icons/60x60.png",
+                        "settings@2x" : "unpackage/res/icons/58x58.png",
+                        "settings@3x" : "unpackage/res/icons/87x87.png",
+                        "spotlight@2x" : "unpackage/res/icons/80x80.png",
+                        "spotlight@3x" : "unpackage/res/icons/120x120.png"
+                    }
+                }
+            }
+        },
+        "nativePlugins" : {
+            "ass-docpreview" : {
+                "__plugin_info__" : {
+                    "name" : "ass-docpreview",
+                    "description" : "TBS办公文件能力",
+                    "platforms" : "Android,iOS",
+                    "url" : "",
+                    "android_package_name" : "",
+                    "ios_bundle_id" : "",
+                    "isCloud" : false,
+                    "bought" : -1,
+                    "pid" : "",
+                    "parameters" : {}
+                }
+            }
+        },
+        "uniStatistics" : {
+            "enable" : true
+        }
+    },
+    /* 快应用特有相关 */
+    "quickapp" : {},
+    /* 小程序特有相关 */
+    "mp-weixin" : {
+        "appid" : "wx92bf5c6c1d1cb19e",
+        "setting" : {
+            "urlCheck" : false,
+            "minified" : true,
+            "postcss" : true
+        },
+        "usingComponents" : true,
+        "optimization" : {
+            "subPackages" : true
+        },
+        "permission" : {},
+        "uniStatistics" : {
+            "enable" : true
+        }
+    },
+    "mp-alipay" : {
+        "usingComponents" : true,
+        "uniStatistics" : {
+            "enable" : false
+        }
+    },
+    "mp-baidu" : {
+        "usingComponents" : true,
+        "uniStatistics" : {
+            "enable" : false
+        }
+    },
+    "mp-toutiao" : {
+        "usingComponents" : true,
+        "uniStatistics" : {
+            "enable" : false
+        }
+    },
+    "uniStatistics" : {
+        "enable" : false
+    },
+    "h5" : {
+        "devServer" : {
+            "proxy" : {
+                "/api" : {
+                    /* 开发环境 */// "target" : "http://192.168.4.85:9529",
+                    /* 测试环境 */// "target" : "https://gateway.iot.ilabeco.com",
+                    //                    "target" : "https://gateway.iot.ilabeco.com",
+                    "target" : "https://video.c4eee.cn",
+                    "pathRewrite" : {
+                        "^/api" : ""
+                    }
+                }
+            }
+        },
+        "title" : "iot-app",
+        "template" : "",
+        "uniStatistics" : {
+            "enable" : true
+        }
+    },
+    "mp-qq" : {
+        "uniStatistics" : {
+            "enable" : false
+        }
+    }
+}
