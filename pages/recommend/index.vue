@@ -7,25 +7,23 @@
                 </view>
             </view>
             <view class="tab">
-                <view class="tab-item" @click="toHome">放歌厅</view>
+                <view class="tab-item p20" @click="toHome">放映厅</view>
                 <view class="tab-item current" @click="toRecommend">推荐</view>
             </view>
         </view>
-
-        <!--<view class="navbar-box" :style="{'padding-top': s_statusBarHeight + 'px'}">
-            <view class="navbar" :style="{'height': navBarHeight+'px','line-height':navBarHeight + 'px'}">
-                趣味阅吧
-            </view>
-        </view>
-        <view class="tab">
-            <view class="tab-item" @click="toHome">放歌厅</view>
-            <view class="tab-item current">推荐</view>
-        </view>-->
         <view :style="{'padding-top':s_statusBarHeight+navBarHeight+50+'px','z-index':1}">
             <ad unit-id="adunit-c6036ec0238579ef" ad-type="video" ad-theme="white"></ad>
-            <view class="video-box">
-                <Video :style="{'width': '100%'}" v-for="(item,index) in list" :key="index" :com-data="item"></Video>
-            </view>
+            <view class="image-box">
+                <!-- <Video :style="{'width': '100%'}" v-for="(item,index) in list" :key="index" :com-data="item"></Video> -->
+				<view class="img" v-for="(item,index) in list" :key="index">
+					<u-image
+						@click="handleToVideo(item.id)"
+						:src="item.thumb_url"
+						height="400rpx"
+						:lazy-load="true"
+					></u-image>
+				</view>
+			</view>
         </view>
 
     </view>
@@ -62,9 +60,13 @@
         methods:{
             // 获取预警记录列表
             getList() {
-                this.$u.api.userApi.getList({page:this.page}).then((res) => {
-                    this.list = res && res.video_src
-                    // this.hasMorePage(res.total || 0, res.video_src.length)
+                this.$u.api.userApi.getRecommendList({
+					page:this.page,
+					appid:'wxd7ce18d61bb55e0a',
+					vid:1
+				}).then((res) => {
+                    this.list = res && res.list
+                    this.hasMorePage(res.total || 0, res.list.length)
                 })
             },
             hasMorePage(total = 0, dataSize = 0) { // 判断是否还有下一页
@@ -83,10 +85,19 @@
                 this.loadMoreStatus = 'loadmore'
             },
             toHome(){
-                uni.navigateBack();
-            }
+				uni.switchTab({
+				    url:'/pages/index/index'
+				})
+            },
+			handleToVideo(vid){
+				this.$u.vuex(`s_bus.vid`, vid)
+				uni.switchTab({
+				    url:'/pages/index/index'
+				})
+			}
         },
         onLoad() {
+			console.log('跳转推荐页')
             // 获取系统信息
             wx.getSystemInfo({
                 success: (res) => {
@@ -126,7 +137,7 @@
             .navbar{
                 text-align: left;
                 padding-left: 30rpx;
-
+                background: red;
                 font-size: 38rpx;
                 color: #fff;
             }
@@ -141,19 +152,26 @@
                 line-height: 50px;
                 font-weight: bold;
                 font-size: 36rpx;
+				&.p20{
+					padding: 0 20rpx;
+				}
                 &.current{
                     color: #F60;
-                    padding: 0 20rpx;
                     font-size: 40rpx;
 
                 }
             }
         }
     }
-    .video-box{
+    .image-box{
         margin-top:30rpx;
         padding: 10rpx;
         background: #fff;
+		.img{
+			width: 100%;
+			height:400rpx;
+			margin-bottom:20rpx;
+		}
     }
 
 </style>

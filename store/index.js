@@ -51,7 +51,7 @@ const initState = () => { // 初始化state数据
 		s_token: lifeData.s_token || '',
 		s_redirectUrl: '', // 重定向地址
 		// s_baseApi: '/api', // api域名（H5环境）
-		s_baseApi: 'https://video.c4eee.cn/',// api域名（app生产环境）
+		s_baseApi: 'https://video.c4eee.cn',// api域名（app生产环境）
 		s_userInfo: lifeData.s_userInfo || null,
 		s_isPageUpdate: false, // 页面onShow时刷新
 		s_switchType: 1, // 区分首页和个人中心跳转预警记录

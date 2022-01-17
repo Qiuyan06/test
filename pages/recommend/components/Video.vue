@@ -1,6 +1,7 @@
 <template>
     <view class="video">
         <video
+			:style="{'width': '100%'}"
             :src="comData"
             controls
         >
@@ -27,6 +28,7 @@
 <style lang="scss" scoped>
     .video{
         margin-top: 30rpx;
+		width:100%;
         height: 400rpx;
     }
 </style>

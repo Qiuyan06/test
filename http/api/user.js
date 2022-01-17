@@ -1,7 +1,10 @@
 const install = (vm) => {
 	return {
-		getList(params = {}) { // 登录
-			return vm.$u.get('/api/index.php?appid=wx92bf5c6c1d1cb19e', params)
+		getHomeList(params = {}) { // 登录
+			return vm.$u.get('/api/index.php', params)
+		},
+		getRecommendList(params = {}) { // 登录
+			return vm.$u.get('/api/list.php', params)
 		},
 	}
 }
