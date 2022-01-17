@@ -34,7 +34,7 @@
                                 </video>
                             </view>
                             <!--<view style="height: 45px;"></view>-->
-							
+
                             <view class="bottom">
                                 <view class="share" style="width: 100%;height:50px;justify-content: space-between;background:#6a0305;display:flex;">
 									<view class="label">↑↑向上滑动加载更多</view>
@@ -101,7 +101,7 @@
             getData() {
                 this.$u.api.userApi.getHomeList({
 					page:this.page,
-					appid:'wx92bf5c6c1d1cb19e',
+					appid:'wxd7ce18d61bb55e0a',
 					vid:this.vid
 				}).then((res) => {
                     console.log('视频数据：',res)
@@ -167,7 +167,7 @@
 			    });
 			},
 			share(){
-				
+
 			},
             toRecommend(){
 				// uni.navigateBack();
@@ -311,7 +311,7 @@
 				color:#fff;
 				line-height: 50px;
 			}
-			
+
 		}
 		.banner{
 			height:110px
