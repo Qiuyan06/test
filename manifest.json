@@ -1,6 +1,6 @@
 {
     "name" : "每日奇趣点播",
-    "appid" : "__UNI__FBE87A1",
+    "appid" : "__UNI__7ED1FC7",
     "description" : "",
     "versionName" : "1.3.0",
     "versionCode" : 130,
@@ -187,7 +187,7 @@
             }
         },
         "uniStatistics" : {
-            "enable" : true
+            "enable" : false
         }
     },
     /* 快应用特有相关 */
